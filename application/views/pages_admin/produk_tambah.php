@@ -12,12 +12,12 @@
                     <input class="form-control" id="jenis_sirap" name="jenis_sirap" placeholder="Jenis Sirap">
                   </div>
                   <div class="form-group">
-                    <label for="jenis_sirap">Bahan</label>
-                    <input class="form-control" id="jenis_sirap" name="jenis_sirap" placeholder="Jenis Sirap">
+                    <label for="bahan">Bahan</label>
+                    <input class="form-control" id="bahan" name="bahan" placeholder="Jenis Sirap">
                   </div>
                   <div class="form-group">
-                    <label for="jenis_sirap">Satuan</label>
-                    <input class="form-control" id="jenis_sirap" name="jenis_sirap" placeholder="Jenis Sirap">
+                    <label for="satuan">Satuan</label>
+                    <input class="form-control" id="satuan" name="satuan" placeholder="Satuan">
                   </div>
                   <div class="form-group">
                     <label for="berat">Berat</label>
