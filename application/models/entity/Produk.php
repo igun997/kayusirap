@@ -7,11 +7,15 @@ class Produk extends CI_Model{
     {
       parent::__construct();
     }
-    public function find($data='')
+    public function find($data='',$start='',$end='')
     {
       if($data == ''){
         return $this->db->get("produk");
-      }else {
+      }elseif ($data != '' && $start != '' && $end != '') {
+        return $this->db->where($data)->get("produk",$start,$end);
+      }elseif($data == '' && $start != '' && $end != ''){
+        return $this->db->order_by("id_produk","desc")->get("produk",$start,$end);
+      }elseif ($data != '' && $start == '' && $end == '') {
         return $this->db->get_where("produk",$data);
       }
     }
