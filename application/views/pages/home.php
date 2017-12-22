@@ -24,64 +24,37 @@
             	<div class="panel panel-primary">
                 <div class="panel-heading"><h3 style="display:inline">Atap Sirap </h3><span class="label label-danger">New</span></div>
                 <div class="panel-body">
+                    <?php foreach ($produk->result() as $key => $value): ?>
                 		<div class="thumbnail">
-                        	<img alt="kayu sirap" src="foto/SirapBaru/Sirap Mesin 5.jpg" width="200" height="250">
-                            <div class="caption">
-                            	<strong>Sirap Mesin</strong><br>
+                        	<img alt="<?= $value->jenis_sirap ?>" src="<?= base_url("_upload/".$value->img) ?>" width="200" height="250">
+                          <div class="caption">
+                            	<strong><?= $value->jenis_sirap ?></strong><br>
                                 <table class="table table-striped table-condensed table-responsive">
                                 <tr>
                                 	<th>Bahan</th><th>:</th>
-                                	<td>Kayu Ulin</td>
+                                	<td><?= $value->bahan ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Satuan</th><th>:</th><td>100 Lembar</td>
+                                    <th>Satuan</th><th>:</th><td><?= $value->satuan ?></td>
                             	</tr>
                                 <tr>
                                     <th>Berat</th><th>:</th>
-                                    <td>+-15kg</td>
+                                    <td><?= $value->berat ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Panjang</th><th>:</th><td>57-60cm</td>
+                                    <th>Panjang</th><th>:</th><td><?= $value->panjang ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Lebar</th><th>:</th><td>7-8cm</td>
+                                    <th>Lebar</th><th>:</th><td><?= $value->lebar ?></td>
                                 </tr>
                                 <tr>
-                                    <th>Tebal</th><th>:</th><td>5mm</td>
-                                </tr>
-                                </table>
-                                <a href="#" class="btn btn-default">Lihat</a>
-                            </div>
-                        </div>
-                                        		<div class="thumbnail">
-                        	<img alt="kayu Ulin" src="foto/SirapBaru/Sirap Manual 1.jpg" width="200" height="250">
-                            <div class="caption">
-                            	<strong>Sirap Manual</strong><br>
-                                <table class="table table-striped table-condensed table-responsive">
-                                <tr>
-                                	<th>Bahan</th><th>:</th>
-                                	<td>Kayu Ulin</td>
-                                </tr>
-                                <tr>
-                                    <th>Satuan</th><th>:</th><td>100 Lembar</td>
-                            	</tr>
-                                <tr>
-                                    <th>Berat</th><th>:</th>
-                                    <td>+-10kg</td>
-                                </tr>
-                                <tr>
-                                    <th>Panjang</th><th>:</th><td>57-60cm</td>
-                                </tr>
-                                <tr>
-                                    <th>Lebar</th><th>:</th><td>7-8cm</td>
-                                </tr>
-                                <tr>
-                                    <th>Tebal</th><th>:</th><td>3mm</td>
+                                    <th>Tebal</th><th>:</th><td><?= $value->tebal ?></td>
                                 </tr>
                                 </table>
-                                <a href="#" class="btn btn-default">Lihat</a>
+                                <a href="<?= base_url("produk/view/".$value->id_produk) ?>" class="btn btn-default">Lihat</a>
                             </div>
-                        </div>
+                    </div>
+                  <?php endforeach; ?>
                 </div>
                 </div>
             </div>
