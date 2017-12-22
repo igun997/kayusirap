@@ -3,10 +3,14 @@
       <div class="col-md-12 col-lg-12 col-sm-12">
         <div class="white-box">
             <h2>Tambah Produk</h2>
-
             <div class="row row-in">
               <div class="col-md-6 col-md-offset-3">
-                <form action="" method="post">
+                <?php if (isset($msg)): ?>
+                  <div class='alert alert-info'>
+                    <?= $msg ?>
+                  </div>
+                <?php endif; ?>
+                <form action="" method="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="jenis_sirap">Jenis Sirap</label>
                     <input class="form-control" id="jenis_sirap" name="jenis_sirap" placeholder="Jenis Sirap">
@@ -44,7 +48,7 @@
                     <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi"></textarea>
                   </div>
                   <div class="form-group">
-                    <button class="btn btn-success" type="submit">Simpan</button>
+                    <button class="btn btn-success" name="tambah" type="submit">Simpan</button>
                     <a href="<?= base_url("administrator/produk") ?>" class="btn btn-danger" >Kembali</a>
                   </div>
                 </form>
