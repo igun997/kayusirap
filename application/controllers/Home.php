@@ -6,11 +6,12 @@ class Home extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-    //Codeigniter : Write Less Do More
+    $this->load->model("entity/Produk");
   }
 
   function index()
   {
+    $page["produk"] = $this->Produk->find('',0,2);
     $data["judul"] = "Halaman Utama";
     $page["view"] = "pages/home";
     $data["data"] = $page;
