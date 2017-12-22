@@ -11,11 +11,11 @@ class Produk_index extends CI_Controller{
 
   function index()
   {
-
+    
   }
-  public function detail($value='')
+  public function view($value='')
   {
-    # code...
+
   }
 
 }
