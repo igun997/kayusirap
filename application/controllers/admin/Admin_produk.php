@@ -46,7 +46,32 @@ class Admin_produk extends CI_Controller{
   }
   function tambah(){
     if(isset($_POST["tambah"])){
-      
+      $data = $this->input->post(null,true);
+      unset($data["tambah"]);
+        $config["detect_mime"] = true;
+        $config["encrypt_name"] = true;
+        $config["mod_mime_fix"] = true;
+        if (isset($_FILES["img"]["tmp_name"])) {
+          $config['upload_path'] = FCPATH."_upload/";
+          $config['allowed_types'] = 'jpg|jpeg|png|gif';
+          $config['max_size'] = 500;
+          $this->load->library('upload', $config);
+          if($this->upload->do_upload('img')){
+            $data_file = $this->upload->data();
+            $produk = $this->Produk;
+            $data["img"] = $data_file["file_name"];
+            if($produk->insert($data)){
+              $page["msg"] = "Simpan Data Berhasil";
+            }else{
+              unlink($data["full_path"]);
+              $page["msg"] = "Simpan Data Gagal";
+            }
+          }else {
+            $page["msg"] = "Upload Gagal Karena : ".$this->upload->display_errors();
+          }
+        }else{
+          $page["msg"] = "Pilih Minimal 1 Gambar";
+        }
     }
     $page["view"] = "pages_admin/produk_tambah";
     $data["judul"] = "Tambah Produk";
