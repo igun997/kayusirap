@@ -29,8 +29,6 @@ class Admin_index extends CI_Controller{
         base_url("assets/js/bootstrap.min.js"),
         base_url("assets/plugins/datatables/jquery.dataTables.min.js"),
         base_url("assets/plugins/bootbox/bootbox.min.js"),
-        "//maps.google.com/maps/api/js?key=AIzaSyDhPhd40W7v2RXXI90KK-K3IEb1T5d8jSA",
-        base_url("assets/js/gmaps.js"),
         base_url("assets/plugins/metisMenu/dist/metisMenu.min.js"),
         base_url("assets/plugins/morrisjs/morris.js"),
         base_url("assets/plugins/raphael/raphael-min.js"),
@@ -38,7 +36,6 @@ class Admin_index extends CI_Controller{
         base_url("assets/js/waves.js"),
         base_url("assets/plugins/sweetalert/sweetalert2.min.js"),
         base_url("assets/js/myadmin.js"),
-        base_url("assets/js/server.js"),
         base_url("assets/js/dashboard.js")
       );
       $data["data"] = $page;

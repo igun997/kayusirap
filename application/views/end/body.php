@@ -28,7 +28,7 @@
                         <a href="<?= base_url("administrator") ?>" class="waves-effect"><i class="ti-home fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="<?= base_url("administrator/produk") ?>" class="waves-effect"><i class=" ti-shopping-cart fa-fw"></i> Jasa</a>
+                        <a href="<?= base_url("administrator/produk") ?>" class="waves-effect"><i class=" ti-shopping-cart fa-fw"></i> Produk</a>
                     </li>
                 </ul>
             </div>
